@@ -1,0 +1,138 @@
+.ShopItem {
+  width: 100%;
+  transition: all 0.1s;
+  position: relative;
+
+  color: #666;
+  padding: 2px;
+  border-radius: 2px;
+  font-weight: bold;
+
+  @media only screen and (min-width: 649px) {
+    &:hover {
+      //transform: translateY(-3px);
+    }
+
+    &:hover &__button {
+      display: block;
+    }
+
+    &:hover &__bar {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  &__img__container {
+    overflow: hidden;
+    height: 37rem;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s ease-out;
+    @media only screen and (max-width: 450px) {
+      height: 23rem;
+    }
+
+    &:hover {
+      .ShopItem__button__container {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__icon-cart {
+    color: #333;
+    font-size: 2rem;
+    border: #333 2px solid;
+    align-self: flex-start;
+    border-radius: 0.7rem;
+    padding: 0.4rem;
+    position: absolute;
+    cursor: pointer;
+    right: 2rem;
+    bottom: 2rem;
+    display: none;
+
+    @media only screen and (max-width: 1200px) {
+      display: block;
+    }
+  }
+
+  &__button {
+    &__container {
+      transform: translateY(100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      opacity: 1;
+      width: 100%;
+      height: 70px;
+      z-index: 1;
+      position: relative;
+      position: absolute;
+      bottom: 0;
+      transition: transform 0.2s;
+      @media only screen and (max-width: 1200px) {
+        display: none !important;
+      }
+    }
+
+    width: 85%;
+    background-color: rgba($color: #000000, $alpha: 1);
+    color: white;
+    border: 1px black solid;
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 1);
+      color: black;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+      padding: 1rem 1.5rem 0 0;
+    }
+  }
+
+  &__name,
+  &__price {
+    transition: all 0.2s ease-out;
+  }
+}
+
+.icon-check {
+  position: absolute;
+  right: 5rem;
+  top: 2.9rem;
+  opacity: 0;
+  color: #28a745;
+}
+
+.bump {
+  animation: bump 0.3s ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+  80% {
+    transform: translateY(1px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

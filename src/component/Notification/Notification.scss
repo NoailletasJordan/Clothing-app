@@ -1,0 +1,24 @@
+.notification {
+  min-height: 3rem;
+  border: 2px double #28a745;
+  background-color: #28a745;
+  position: fixed;
+  top: 100%;
+  transform: translate(20px, 0);
+  color: white;
+  transition: transform 1s linear, opacity 1s linear;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 5px;
+  opacity: 0; //fix for mobile
+}
+
+.notification {
+  &.isShown {
+    transform: translate(20px, -200%);
+    opacity: 1;
+  }
+  &.error {
+    border: 2px double #dc3545;
+    background-color: #dc3545;
+  }
+}

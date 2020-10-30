@@ -1,0 +1,49 @@
+$color-grey-1: #4a4a4a;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 1.7rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 130rem;
+  padding: 0 50px;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 25px;
+  }
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: inherit;
+}
+
+.u-col-f3-flex {
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+}
+
+*[data-aos='fade-right'] {
+  // or another animation type you have
+  -webkit-transform: translate3d(20px, 0, 0); // or another value you need
+  transform: translate3d(20px, 0, 0); // or another value you need
+}

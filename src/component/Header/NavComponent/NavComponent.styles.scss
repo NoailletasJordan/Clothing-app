@@ -1,0 +1,36 @@
+.nav__component {
+  display: flex;
+  align-items: center;
+
+  &__navlink {
+    &,
+    &:link,
+    &:visited {
+      display: inline-block;
+      //padding: 1.6rem 1rem;
+      font-size: 2.2rem;
+      text-decoration: none;
+      color: #4a4a4a;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: transparent 1px solid;
+      border-bottom: #4a4a4a 1px solid;
+      transition: all ease-out 0.1s;
+      @media only screen and (max-width: 600px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    &:hover {
+      color: white;
+      background: #4a4a4a;
+      border: 1px #4a4a4a solid;
+    }
+  }
+}
+
+.active {
+  color: white !important;
+  background: #4a4a4a !important;
+  border: 1px #4a4a4a solid !important;
+}

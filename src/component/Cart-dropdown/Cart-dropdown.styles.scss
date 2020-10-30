@@ -1,0 +1,108 @@
+.cart-dropdown {
+  position: fixed;
+  width: 30rem;
+  height: calc(100% - (9.5rem + 30px));
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  padding-top: 4rem;
+  border: 1px solid black;
+  border-right: none;
+  border-bottom: none;
+  background-color: #eee;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  transition: transform 0.3s ease-in;
+
+  &__opener {
+    display: flex;
+    height: 38px;
+    justify-content: center;
+    align-items: center;
+    border: black 1px solid;
+    border-right: white;
+    position: absolute;
+    z-index: 10;
+    left: -24px;
+    bottom: 50%;
+    width: 24px;
+    cursor: pointer;
+    background-color: #eee;
+
+    &--rotated {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__totalPrice {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1.2rem;
+    top: 0rem;
+    font-size: 2rem;
+    padding: 0.8rem 0.8rem;
+    cursor: pointer;
+    border: transparent 1px solid;
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    margin: 0 auto;
+    //right: 1rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  &__empty {
+    margin: auto;
+    text-decoration: underline;
+  }
+
+  button {
+    margin-top: auto;
+  }
+
+  &__hiddener {
+    transform: translateX(100%);
+  }
+}
+
+.anim__opener--shake {
+  animation: shake 20s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  91%,
+  99% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  92%,
+  98% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  93%,
+  95%,
+  97% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  94%,
+  96% {
+    transform: translate3d(1px, 0, 0);
+  }
+}

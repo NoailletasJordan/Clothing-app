@@ -1,0 +1,30 @@
+.cart {
+  width: 7.5rem;
+  height: 7.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(15px);
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    transform: translateY(-0.3rem);
+  }
+
+  &__count {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: bold;
+    transform: translateY(1px);
+  }
+}

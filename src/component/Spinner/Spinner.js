@@ -1,12 +1,12 @@
-import React from 'react';
-import './Spinner.styles.scss';
+import React from 'react'
+import './Spinner.styles.scss'
 
 const Spinner = () => {
-    return (
-        <div className='loader'>
-            
-        </div>
-    );
+  return (
+    <div className="u-vh-calc">
+      <div className="loader"></div>
+    </div>
+  )
 }
 
-export default Spinner;
+export default Spinner

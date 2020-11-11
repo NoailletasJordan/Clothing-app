@@ -9,17 +9,8 @@
   font-weight: bold;
 
   @media only screen and (min-width: 649px) {
-    &:hover {
-      //transform: translateY(-3px);
-    }
-
     &:hover &__button {
       display: block;
-    }
-
-    &:hover &__bar {
-      width: 100%;
-      opacity: 1;
     }
   }
 
@@ -59,6 +50,11 @@
     @media only screen and (max-width: 1200px) {
       display: block;
     }
+
+    @media only screen and (max-width: 600px) {
+      right: 1rem;
+      bottom: 1rem;
+    }
   }
 
   &__button {
@@ -89,6 +85,12 @@
     &:hover {
       background-color: rgba($color: #fff, $alpha: 1);
       color: black;
+    }
+
+    // Ugly fix
+    &:active .icon-check {
+      top: 1.9rem !important;
+      right: 2.9rem !important;
     }
   }
 

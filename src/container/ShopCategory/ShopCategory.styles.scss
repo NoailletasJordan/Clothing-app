@@ -7,6 +7,7 @@
   grid-auto-rows: 42rem;
   grid-row-gap: 5rem;
   margin-bottom: 70px;
+  min-height: calc(100vh - 320px);
 
   @media only screen and (max-width: 900px) {
     grid-template-columns: repeat(3, 1fr);

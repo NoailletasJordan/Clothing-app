@@ -1,18 +1,12 @@
 import React, { useEffect, useState, lazy, Suspense, Fragment } from 'react'
 import './style/main.scss'
 import Header from './component/Header/Header'
-//import Homepage from "./container/homepage/homepage";
-//import ShopPage from "./container/ShopPage/ShopPage";
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import SignInSignUpPage from './container/Sign-in-sign-up/Sign-in-sign-up'
-//import CheckoutPage from "./container/CheckoutPage/CheckoutPage";
 import Notification from './component/Notification/Notification'
 import { notificationTrigger } from './actions/notification'
-//import ShopCategory from './container/ShopCategory/ShopCategory'
-//import OrdersPage from './container/OrdersPage/OrdersPage';
 import Spinner from './component/Spinner/Spinner'
 import Footer from './component/Footer/Footer'
-
 import { useSelector, useDispatch } from 'react-redux'
 import { authLogOut, authSignIn } from './actions/auth'
 import {
@@ -36,10 +30,10 @@ function App() {
   const dispatch = useDispatch()
   const isLogged = useSelector((state) => state.auth.isLogged)
   const cartItems = useSelector((state) => state.cart.cartItems)
-  const [isShowHeader, setIsShowHeader] = useState(true)
 
   useEffect(() => {
     getFromStorage()
+    // Firebase Auth Listener
     let unsubscribeFromAuth = auth.onAuthStateChanged((firebaseUser) => {
       if (firebaseUser) {
         const { email, displayName } = firebaseUser
@@ -75,18 +69,17 @@ function App() {
             })
         }
       } else {
-      } //not logged in
+      } // not logged in
     })
 
     return () => {
       unsubscribeFromAuth() //cleanup observer
-      localStorage.setItem('monChat', 'Tom')
       window.removeEventListener('scroll')
     }
   }, [])
 
   useEffect(() => {
-    //triggers every time the cart is changed
+    // triggers every time the cart is changed
     UpdatePrice()
     UpdateCartNumber()
     window.localStorage.setItem('clothesAppCart', JSON.stringify(cartItems))
@@ -117,7 +110,7 @@ function App() {
 
   let root = null
   if (isLogged) {
-    root = ( //logged
+    root = ( // logged
       <Fragment>
         <Suspense fallback={<Spinner />}>
           <Switch>
@@ -131,7 +124,7 @@ function App() {
       </Fragment>
     )
   } else {
-    //not logged
+    // not logged
     root = (
       <Suspense fallback={<div />}>
         <Switch>

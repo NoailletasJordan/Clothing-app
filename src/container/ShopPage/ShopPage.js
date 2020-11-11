@@ -35,7 +35,9 @@ const ShopPage = (props) => {
 
   let isLoading = false
   return isLoading ? (
-    <Spinner />
+    <div className="shopPage">
+      <Spinner />
+    </div>
   ) : (
     <div className="container">
       <div className="shopPage">

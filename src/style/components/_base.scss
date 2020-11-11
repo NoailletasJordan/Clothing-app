@@ -42,6 +42,10 @@ a:active {
   justify-content: center;
 }
 
+.u-vh-calc {
+  min-height: calc(100vh - 320px);
+}
+
 *[data-aos='fade-right'] {
   // or another animation type you have
   -webkit-transform: translate3d(20px, 0, 0); // or another value you need

@@ -13,6 +13,7 @@ const config = {
   measurementId: 'G-3EJ1L1XTG4',
 }
 
+// Create profile if new user only
 export const createUserProfileDocument = async (
   firebaseUser,
   displayName,
@@ -67,6 +68,7 @@ export const addCollectionAndDocuments = async (
   await batch.commit().then(() => console.log('dooooone'))
 }
 
+// Not used anymore I believe
 export const convertCollectionToUsable = (collection) => {
   collection.items.forEach((item) => {
     item.key = item.id

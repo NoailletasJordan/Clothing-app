@@ -1,19 +1,20 @@
 .orders-page {
-    display: grid;
-    grid-row-gap: 3rem;
+  display: grid;
+  grid-row-gap: 3rem;
+  min-height: calc(100vh - 320px);
 
-    &__empty {
-        margin: 0 auto;
-        font-weight: 400;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        &__cta {
-            margin-top: 2rem;
-            font-weight: 800;
-            text-decoration: underline;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
+  &__empty {
+    margin: 0 auto;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__cta {
+      margin-top: 2rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-transform: uppercase;
+      cursor: pointer;
     }
+  }
 }

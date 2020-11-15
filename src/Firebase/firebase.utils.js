@@ -12,6 +12,7 @@ const config = {
   appId: '1:361613469055:web:4f0651288956c1447ba64a',
   measurementId: 'G-3EJ1L1XTG4',
 }
+firebase.initializeApp(config)
 
 // Create profile if new user only
 export const createUserProfileDocument = async (
@@ -39,8 +40,6 @@ export const createUserProfileDocument = async (
   } else return
 }
 
-firebase.initializeApp(config)
-
 export const auth = firebase.auth()
 export const firestore = firebase.firestore()
 
@@ -48,10 +47,13 @@ const provider = new firebase.auth.GoogleAuthProvider()
 provider.setCustomParameters({ prompt: 'select_account' }) // not sure what is is used for
 
 export const signInWithGoogle = () =>
-  auth.signInWithPopup(provider).catch((err) => {
-    console.log(err)
-    return { error: true }
-  })
+  auth
+    .signInWithPopup(provider)
+    //.then((result) => console.log(result.user))
+    .catch((err) => {
+      console.log(err)
+      return { error: true }
+    })
 
 export const addCollectionAndDocuments = async (
   collectionKey,

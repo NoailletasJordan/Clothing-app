@@ -4,7 +4,7 @@ import './Footer.scss'
 const Footer = (props) => {
   return (
     <div className="container-fluid u-col-f3-flex ">
-      <div className="footer row" data-aos="fade-right" data-aos-delay="200">
+      <div className="footer row">
         <div className="col-md-3 col-sm-6 col-6">
           <div>
             <div className="str">Account</div>

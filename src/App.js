@@ -120,13 +120,14 @@ function App() {
             <Route path="/checkout" component={CheckoutPage} />
             <Redirect to="/" />
           </Switch>
+          <Footer />
         </Suspense>
       </Fragment>
     )
   } else {
     // not logged
     root = (
-      <Suspense fallback={<div />}>
+      <Suspense fallback={<Spinner />}>
         <Switch>
           <Route path="/shop" exact component={ShopPage} />
           <Route path="/shop/:category" component={ShopCategory} />
@@ -134,6 +135,7 @@ function App() {
           <Route path="/signin" exact component={SignInSignUpPage} />
           <Redirect to="/" />
         </Switch>
+        <Footer />
       </Suspense>
     )
   }
@@ -142,12 +144,12 @@ function App() {
   return (
     <BrowserRouter>
       <Header isLogged={isLogged} handleClick={handleClickLogOut} />
-      <Suspense fallback={<div />}>
+      <Suspense fallback={<Spinner />}>
         <Route exact path="/" component={Homepage} />
       </Suspense>
 
       {root}
-      <Footer />
+
       <Notification />
     </BrowserRouter>
   )

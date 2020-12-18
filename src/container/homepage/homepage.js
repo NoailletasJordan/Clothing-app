@@ -1,27 +1,15 @@
-import React from 'react'
-import './homepage.styles.scss'
-import './button.scss'
-import Video from '../../assets/CaraDelevingne.mp4'
-import mediaQuery from '@material-ui/core/useMediaQuery'
+import React from "react"
+import "./homepage.styles.scss"
+import "./button.scss"
+//import Video from '../../assets/CaraDelevingne.mp4'
+import mediaQuery from "@material-ui/core/useMediaQuery"
 
 const homepage = (props) => {
-  const mobileDevice = mediaQuery('(max-width:577px)')
+  const mobileDevice = mediaQuery("(max-width:577px)")
   return (
     <div className="homepage">
       <div className="homepage__top">
-        {!mobileDevice ? (
-          <video
-            autostart="true"
-            autoPlay
-            src={Video}
-            loop={true}
-            muted
-            type="video/mp4"
-            width="100%"
-          />
-        ) : (
-          <div className="homepage__top__image"></div>
-        )}
+        <div className="homepage__top__image"></div>
 
         <div className="homepage__top__content">
           <div className="homepage__top__darker" />
@@ -31,7 +19,7 @@ const homepage = (props) => {
             data-aos-delay="1000"
           >
             <div className="homepage__top__content__welcome">
-              WELCOME TO <i>ELEGANCY</i>
+              WELCOME TO ELEGANCY
             </div>
 
             <p className="homepage__top__content__p">
@@ -43,7 +31,7 @@ const homepage = (props) => {
             <div>
               <span
                 className="btn-2"
-                onClick={() => props.history.push('/shop')}
+                onClick={() => props.history.push("/shop")}
               >
                 Browse the Collections
               </span>
@@ -149,7 +137,7 @@ const homepage = (props) => {
                   </div>
                   <div
                     className="homepage__bottom__line__card--square--btn"
-                    onClick={() => props.history.push('/shop/mens')}
+                    onClick={() => props.history.push("/shop/mens")}
                   >
                     View All Products
                   </div>
@@ -172,7 +160,7 @@ const homepage = (props) => {
                   </div>
                   <div
                     className="homepage__bottom__line__card--square--btn"
-                    onClick={() => props.history.push('/shop/womens')}
+                    onClick={() => props.history.push("/shop/womens")}
                   >
                     View All Products
                   </div>

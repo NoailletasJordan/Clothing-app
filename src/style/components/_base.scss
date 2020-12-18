@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 300;
   line-height: 1.7;
   font-size: 1.7rem;
@@ -46,8 +46,13 @@ a:active {
   min-height: calc(100vh - 320px);
 }
 
-*[data-aos='fade-right'] {
+// Transform fade in right in just fade in
+*[data-aos="fade-right"] {
   // or another animation type you have
-  -webkit-transform: translate3d(20px, 0, 0); // or another value you need
-  transform: translate3d(20px, 0, 0); // or another value you need
+  -webkit-transform: translate3d(
+    0,
+    0,
+    0
+  ) !important; // or another value you need
+  transform: translate3d(0, 0, 0) !important; // or another value you need
 }

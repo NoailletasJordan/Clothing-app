@@ -1,5 +1,5 @@
-import React from 'react'
-import './Footer.scss'
+import React from "react"
+import "./Footer.scss"
 
 const Footer = (props) => {
   return (
@@ -17,7 +17,7 @@ const Footer = (props) => {
           <div>
             <div className="str">About</div>
             <div>News</div>
-            <div>Chechout</div>
+            <div>Checkout</div>
           </div>
         </div>
         <div className="col-md-3 col-sm-6 col-6">
@@ -30,7 +30,7 @@ const Footer = (props) => {
         </div>
         <div className="col-md-3 col-sm-6 col-6">
           <div>
-            <div className="str">Account</div>
+            <div className="str">Contact</div>
             <div>
               <span className="str">Hotline:</span> 06 98 54 35 62
             </div>

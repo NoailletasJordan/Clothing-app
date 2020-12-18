@@ -147,26 +147,55 @@ const ShopCategory = (props) => {
           ))}
       </div>
       <div className="shop-category__pagination">
-        <div
-          className="shop-category__pagination__item pagination-previous"
-          onClick={() => handleChangePage(currentPagination - 1)}
-        >
-          {"<"}
-        </div>
+        {currentPagination === 1 ? (
+          <div
+            className="shop-category__pagination__item pagination-previous"
+            onClick={() => handleChangePage(Number(currentPagination) - 1)}
+          >
+            {"<"}
+          </div>
+        ) : (
+          <a
+            href="#top"
+            className="shop-category__pagination__item pagination-previous"
+            onClick={() => handleChangePage(Number(currentPagination) - 1)}
+          >
+            {"<"}
+          </a>
+        )}
         {!userOnSmartphone
-          ? arrayLentghNumberPage.map((item) => (
-              <div
-                key={item}
-                onClick={(e) => handleChangePage(item)}
-                className={
-                  item === currentPagination
-                    ? "shop-category__pagination__item pagination-selected"
-                    : "shop-category__pagination__item"
-                }
-              >
-                {item}
-              </div>
-            ))
+          ? arrayLentghNumberPage.map((item) => {
+              // Deactivate link on current pagination item
+              if (item === currentPagination)
+                return (
+                  <div
+                    key={item}
+                    onClick={(e) => handleChangePage(item)}
+                    className={
+                      item === currentPagination
+                        ? "shop-category__pagination__item pagination-selected"
+                        : "shop-category__pagination__item"
+                    }
+                  >
+                    {item}
+                  </div>
+                )
+              else
+                return (
+                  <a
+                    key={item}
+                    href="#top"
+                    onClick={(e) => handleChangePage(item)}
+                    className={
+                      item === currentPagination
+                        ? "shop-category__pagination__item pagination-selected"
+                        : "shop-category__pagination__item"
+                    }
+                  >
+                    {item}
+                  </a>
+                )
+            })
           : [currentPagination].map((item) => (
               <div
                 key={item}
@@ -180,12 +209,23 @@ const ShopCategory = (props) => {
                 {item}
               </div>
             ))}
-        <div
-          className="shop-category__pagination__item pagination-next"
-          onClick={() => handleChangePage(Number(currentPagination) + 1)}
-        >
-          {">"}
-        </div>
+
+        {currentPagination === arrayLentghNumberPage.length ? (
+          <div
+            className="shop-category__pagination__item pagination-next"
+            onClick={() => handleChangePage(Number(currentPagination) + 1)}
+          >
+            {">"}
+          </div>
+        ) : (
+          <a
+            href="#top"
+            className="shop-category__pagination__item pagination-next"
+            onClick={() => handleChangePage(Number(currentPagination) + 1)}
+          >
+            {">"}
+          </a>
+        )}
       </div>
     </div>
   )

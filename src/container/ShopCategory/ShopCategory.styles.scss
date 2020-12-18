@@ -83,7 +83,6 @@
   }
 
   &__pagination {
-    //border: 1px dotted black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,6 +117,13 @@
     .pagination-selected {
       color: white;
       background-color: rgba($color: #333, $alpha: 1);
+    }
+
+    a,
+    a:hover,
+    a:visited,
+    a:active {
+      text-decoration: none;
     }
   }
 }

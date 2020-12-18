@@ -1,14 +1,4 @@
 .homepage {
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
   &__top {
     width: 100%;
     height: calc(100vh - 105px);
@@ -27,12 +17,16 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      background-position: left;
+      background-position: center;
       background-size: cover;
-      //filter: brightness(30%);
+
       color: white;
       background-image: url("../../assets//woman-apparel.jpg");
       background-attachment: fixed;
+
+      @media only screen and (max-width: 600px) {
+        filter: brightness(50%);
+      }
     }
 
     &__content {
@@ -51,19 +45,19 @@
 
       &__wrapper {
         //border: 1px solid white;
-        margin: 0 400px;
-        max-width: 400px;
+        margin: 0 200px;
+        max-width: 600px;
         width: 100;
         padding: 16px;
         z-index: 1;
 
-        @media only screen and (max-width: 1700px) {
-          margin: 0 150px;
+        @media only screen and (max-width: 2000px) {
+          margin: 0 50px;
+          max-width: 400px;
         }
 
         @media only screen and (max-width: 1000px) {
-          margin: 0 50px;
-          max-width: 500px;
+          max-width: 400px;
         }
 
         @media only screen and (max-width: 600px) {

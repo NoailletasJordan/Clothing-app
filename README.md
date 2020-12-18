@@ -2,7 +2,7 @@
 
 Elegancy est un mockup d'**e-commerce** de vêtements.
 
-Parfaitement fonctionnel, le frontend est construit avec **React**, les commandes sont envoyées sur une base de données **firebase** et les paiements sont gérés par **Stripe**. Le site est accessible [ici](https://e-shop.jordannoailletas.com).
+Parfaitement fonctionnel, le frontend est construit avec **React**, les commandes sont lues et envoyées sur une base de données **firebase** et les paiements sont gérés par **Stripe**. Le site est accessible [ici](https://e-shop.jordannoailletas.com).
 
 ## Aperçu
 

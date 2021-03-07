@@ -1,294 +1,321 @@
+@mixin shop-category__element__image {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	z-index: -1;
+	transition: all 0.8s ease;
+}
+
 .homepage {
-  &__top {
-    width: 100%;
-    height: calc(100vh - 105px);
-    position: relative;
-    overflow: hidden;
-    display: flex;
+	&__sentence--1 {
+		padding: 75px 0;
+		text-align: center;
+		font-family: "Poppins", serif;
+		color: #4a4a4a;
+	}
 
-    &__darker {
-      background-color: rgba($color: #000000, $alpha: 0.3);
-      width: 100%;
-      height: 100%;
-      position: absolute;
-    }
+	&__shop-category {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		height: 450px;
+		grid-column-gap: 2%;
+		grid-row-gap: 16px;
+		cursor: pointer;
 
-    &__image {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-position: center;
-      background-size: cover;
+		@media only screen and (max-width: 991px) {
+			height: 400px;
+		}
 
-      color: white;
-      background-image: url("../../assets//woman-apparel.jpg");
-      background-attachment: fixed;
+		@media only screen and (max-width: 767px) {
+			grid-template-columns: repeat(2, 1fr);
+			height: 900px;
+		}
 
-      @media only screen and (max-width: 600px) {
-        filter: brightness(50%);
-      }
-    }
+		@media only screen and (max-width: 600px) {
+			height: 800px;
+		}
 
-    &__content {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      color: white;
-      font-size: 17px;
-      display: flex;
-      align-items: center;
-      text-shadow: 1px 1px 2px black;
+		&__element {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			overflow: hidden;
 
-      @media only screen and (max-width: 600px) {
-        font-size: 17px;
-      }
+			&:hover div:first-child {
+				transform: scale(1.03);
+				filter: brightness(0.88);
+			}
 
-      &__wrapper {
-        //border: 1px solid white;
-        margin: 0 200px;
-        max-width: 600px;
-        width: 100;
-        padding: 16px;
-        z-index: 1;
+			&__image--1 {
+				@include shop-category__element__image;
+				background-image: url("../../assets/tops.jpg");
+			}
 
-        @media only screen and (max-width: 2000px) {
-          margin: 0 50px;
-          max-width: 400px;
-        }
+			&__image--2 {
+				@include shop-category__element__image;
+				background-image: url("../../assets/tunic.jpg");
+			}
 
-        @media only screen and (max-width: 1000px) {
-          max-width: 400px;
-        }
+			&__image--3 {
+				@include shop-category__element__image;
+				background-image: url("../../assets/dress.jpg");
+			}
 
-        @media only screen and (max-width: 600px) {
-          margin: 0 25px;
-          max-width: 400px;
-        }
-      }
+			&__image--4 {
+				@include shop-category__element__image;
+				background-image: url("../../assets/sweatshirts.jpg");
+			}
 
-      &__welcome {
-        font-size: 40px;
-        //font-weight: bold;
-        @media only screen and (max-width: 600px) {
-          font-size: 30px;
-        }
-      }
+			&--text {
+				background-color: white;
+				padding: 8px 15px;
+			}
+		}
+	}
 
-      &__p {
-        margin-bottom: 30px;
-        font-family: "Poppins", sans-serif;
-        text-align: justify;
-        @media only screen and (max-width: 600px) {
-          font-size: 14px;
-        }
-      }
+	&__fresh-looks {
+		margin-top: 75px;
+		height: 750px;
+		position: relative;
+		background-image: linear-gradient(-90deg, #00000088 20%, #ffffff20 100%);
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+		font-family: "Playfair Display", serif;
 
-      &__arrowdown {
-        position: absolute;
-        color: white;
-        font-size: 29px;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        //border: 1px solid white;
-        padding: 20px 30px;
-        cursor: pointer;
-        @media only screen and (max-width: 600px) {
-          display: none;
-        }
-      }
-    }
-  }
+		&__image {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+			background-image: url("../../assets/red-dress.jpg");
+			z-index: -1;
+		}
 
-  &__middle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4a4a4a;
-    min-height: 280px;
+		&__content {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			padding-right: 42px;
+		}
 
-    @media only screen and (max-width: 600px) {
-      padding: 20px 0;
-    }
+		&__text--1 {
+			font-size: 20px;
+		}
 
-    &__fiability {
-      flex-grow: 1;
-      .homepage__fiability__item {
-        display: flex;
-        justify-content: center;
-        margin: 10px 0;
-        @media only screen and (min-width: 768px) {
-          margin-top: 0px;
-        }
-        &--icon {
-          display: flex;
-          align-items: center;
-          padding-right: 16px;
-          font-size: 25px;
-        }
+		&__text--2 {
+			font-size: 45px;
+		}
 
-        &--right {
-          max-width: 150px;
-        }
+		&__text--3 {
+			text-align: end;
+			font-size: 18px;
+			font-family: "Poppins", serif;
+			margin-bottom: 15px;
+		}
 
-        &--title {
-          font-size: 18px;
-          font-weight: bold;
-          text-transform: uppercase;
-        }
-      }
-    }
-  }
+		&__space {
+			display: inline-block;
+			width: 16px;
+			height: 10px;
+		}
+	}
 
-  &__bottom {
-    min-height: 400px;
-    padding: 0 0;
+	&__middle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #4a4a4a;
+		min-height: 280px;
 
-    &__title {
-      font-size: 30px;
-      color: black;
-      font-family: "Poppins", sans-serif;
-      display: flex;
-      align-items: center;
-      &--sepa {
-        background-color: #4a4a4a;
-        opacity: 0.1;
-        flex-grow: 1;
-        height: 2px;
-        margin-left: 30px;
-      }
-    }
+		@media only screen and (max-width: 600px) {
+			padding: 20px 0;
+		}
 
-    &__subtitle {
-      font-size: 20px;
-      color: #4a4a4a;
-      transform: translateY(-10px);
-      margin-bottom: 15px;
-      font-family: "Poppins", sans-serif;
-    }
+		&__fiability {
+			flex-grow: 1;
+			.homepage__fiability__item {
+				display: flex;
+				justify-content: center;
+				margin: 10px 0;
+				@media only screen and (min-width: 768px) {
+					margin-top: 0px;
+				}
+				&--icon {
+					display: flex;
+					align-items: center;
+					padding-right: 16px;
+					font-size: 25px;
+				}
 
-    &__line {
-      padding-bottom: 100px;
+				&--right {
+					max-width: 150px;
+				}
 
-      &__card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 25px;
-        color: white;
+				&--title {
+					font-size: 18px;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
 
-        //flex-grow: 1;
-        height: 350px;
-        background-position: center;
-        background-size: cover;
-        background-image: url("../../assets/man.jpg");
+	&__bottom {
+		min-height: 400px;
+		padding: 0 0;
 
-        &--square {
-          padding: 0 25px;
-          border: rgba($color: white, $alpha: 0.1) solid 7px;
-          width: 100%;
-          height: 100%;
+		&__title {
+			font-size: 30px;
+			color: black;
+			font-family: "Poppins", sans-serif;
+			display: flex;
+			align-items: center;
+			&--sepa {
+				background-color: #4a4a4a;
+				opacity: 0.1;
+				flex-grow: 1;
+				height: 2px;
+				margin-left: 30px;
+			}
+		}
 
-          &--title {
-            font-size: 38px;
-            font-weight: bold;
-          }
+		&__subtitle {
+			font-size: 20px;
+			color: #4a4a4a;
+			transform: translateY(-10px);
+			margin-bottom: 15px;
+			font-family: "Poppins", sans-serif;
+		}
 
-          &--description {
-            font-size: 30px;
-            transform: translateY(-18px);
-          }
+		&__line {
+			padding-bottom: 100px;
 
-          &--btn {
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 150px;
-            height: 10px;
-            border: 1px solid white;
-            padding: 20px 0;
-            transition: all 0.2s;
+			&__card {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 25px;
+				color: white;
 
-            &:hover {
-              border: 1px solid black;
-              background-color: black;
-            }
-          }
-        }
-      }
+				//flex-grow: 1;
+				height: 350px;
+				background-position: center;
+				background-size: cover;
+				background-image: url("../../assets/man.jpg");
 
-      .line__card--alt {
-        color: black;
-        background-image: url("../../assets/woman.jpg");
-        background-position: right;
-        background-size: cover;
-        margin-top: 20px;
-        .homepage__bottom__line__card--square {
-          border: rgba($color: black, $alpha: 0.1) solid 7px;
-          &--btn {
-            border: 1px black solid;
+				&--square {
+					padding: 0 25px;
+					border: rgba($color: white, $alpha: 0.1) solid 7px;
+					width: 100%;
+					height: 100%;
 
-            &:hover {
-              color: white;
-            }
-          }
-        }
+					&--title {
+						font-size: 38px;
+						font-weight: bold;
+					}
 
-        @media only screen and (min-width: 768px) {
-          margin-top: 0px;
-        }
-      }
-    }
-  }
+					&--description {
+						font-size: 30px;
+						transform: translateY(-18px);
+					}
+
+					&--btn {
+						cursor: pointer;
+						font-weight: bold;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 150px;
+						height: 10px;
+						border: 1px solid white;
+						padding: 20px 0;
+						transition: all 0.2s;
+
+						&:hover {
+							border: 1px solid black;
+							background-color: black;
+						}
+					}
+				}
+			}
+
+			.line__card--alt {
+				color: black;
+				background-image: url("../../assets/woman.jpg");
+				background-position: right;
+				background-size: cover;
+				margin-top: 20px;
+				.homepage__bottom__line__card--square {
+					border: rgba($color: black, $alpha: 0.1) solid 7px;
+					&--btn {
+						border: 1px black solid;
+
+						&:hover {
+							color: white;
+						}
+					}
+				}
+
+				@media only screen and (min-width: 768px) {
+					margin-top: 0px;
+				}
+			}
+		}
+	}
 }
 
 //
 
 .bounce-top {
-  -webkit-animation: bounce-top 4s forwards infinite;
-  animation: bounce-top 4s forwards infinite;
-  transform: translateX(-50%);
+	-webkit-animation: bounce-top 4s forwards infinite;
+	animation: bounce-top 4s forwards infinite;
+	transform: translateX(-50%);
 }
 
 @keyframes bounce-top {
-  0% {
-    -webkit-transform: translateY(0px) translateX(-50%);
-    transform: translateY(0px) translateX(-50%);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  13% {
-    -webkit-transform: translateY(-20px) translateX(-50%);
-    transform: translateY(-20px) translateX(-50%);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  25% {
-    -webkit-transform: translateY(0px) translateX(-50%);
-    transform: translateY(0px) translateX(-50%);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  37% {
-    -webkit-transform: translateY(-20px) translateX(-50%);
-    transform: translateY(-20px) translateX(-50%);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
+	0% {
+		-webkit-transform: translateY(0px) translateX(-50%);
+		transform: translateY(0px) translateX(-50%);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+	13% {
+		-webkit-transform: translateY(-20px) translateX(-50%);
+		transform: translateY(-20px) translateX(-50%);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+	25% {
+		-webkit-transform: translateY(0px) translateX(-50%);
+		transform: translateY(0px) translateX(-50%);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+	37% {
+		-webkit-transform: translateY(-20px) translateX(-50%);
+		transform: translateY(-20px) translateX(-50%);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
 
-  50% {
-    -webkit-transform: translateY(0px) translateX(-50%);
-    transform: translateY(0px) translateX(-50%);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
+	50% {
+		-webkit-transform: translateY(0px) translateX(-50%);
+		transform: translateY(0px) translateX(-50%);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
 
-  100% {
-    -webkit-transform: translateY(0px) translateX(-50%);
-    transform: translateY(0px) translateX(-50%);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
+	100% {
+		-webkit-transform: translateY(0px) translateX(-50%);
+		transform: translateY(0px) translateX(-50%);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
 }

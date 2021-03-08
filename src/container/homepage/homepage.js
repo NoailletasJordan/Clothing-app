@@ -15,7 +15,11 @@ const homepage = props => {
 				<Slider props={props} />
 			</div>
 
-			<div className="homepage__sentence--1">
+			<div
+				className="homepage__sentence--1"
+				data-aos="fade-in"
+				data-aos-delay="200"
+			>
 				Fashion inspired by where we're from - the sunny shores or California.{" "}
 				<br />
 				Products provided with love
@@ -24,8 +28,10 @@ const homepage = props => {
 			<div className="container">
 				<div className="homepage__shop-category">
 					<div
-						className="homepage__shop-category__element "
+						className="homepage__shop-category__element"
 						onClick={() => handleRedirect("/shop/hats")}
+						data-aos="fade-in"
+						data-aos-delay="200"
 					>
 						<div className="homepage__shop-category__element__image--1" />
 						<div className="homepage__shop-category__element--text ">HATS</div>
@@ -33,6 +39,8 @@ const homepage = props => {
 					<div
 						className="homepage__shop-category__element"
 						onClick={() => handleRedirect("/shop/jackets")}
+						data-aos="fade-in"
+						data-aos-delay="300"
 					>
 						<div className="homepage__shop-category__element__image--2" />
 						<div className="homepage__shop-category__element--text ">TOPS</div>
@@ -40,6 +48,8 @@ const homepage = props => {
 					<div
 						className="homepage__shop-category__element "
 						onClick={() => handleRedirect("/shop/jackets")}
+						data-aos="fade-in"
+						data-aos-delay="400"
 					>
 						<div className="homepage__shop-category__element__image--3" />
 						<div className="homepage__shop-category__element--text ">
@@ -49,6 +59,8 @@ const homepage = props => {
 					<div
 						className="homepage__shop-category__element "
 						onClick={() => handleRedirect("/shop/womens")}
+						data-aos="fade-in"
+						data-aos-delay="500"
 					>
 						<div className="homepage__shop-category__element__image--4" />
 						<div className="homepage__shop-category__element--text ">
@@ -61,7 +73,11 @@ const homepage = props => {
 			<div className="container">
 				<div className="homepage__fresh-looks ">
 					<div className="homepage__fresh-looks__image" />
-					<div className="homepage__fresh-looks__content">
+					<div
+						className="homepage__fresh-looks__content"
+						data-aos="fade-in"
+						data-aos-delay="200"
+					>
 						<div className="homepage__fresh-looks__text--1">FRESH LOOKS</div>
 						<div className="homepage__fresh-looks__text--2">
 							FALL ACCESSORIES
@@ -91,12 +107,12 @@ const homepage = props => {
 			<div className="container">
 				<div
 					id="middle"
-					className="homepage__middle"
+					className="homepage__middle "
 					data-aos="fade-right"
 					data-aos-delay="200"
 				>
-					<div className="homepage__middle__fiability row ">
-						<div className="homepage__fiability__item col-md-3 col-sm-6 col-xs-12">
+					<div className="homepage__middle__fiability  ">
+						<div className="homepage__fiability__item ">
 							<div className="homepage__fiability__item--icon">
 								<i className="fas fa-shopping-cart"></i>
 							</div>
@@ -110,7 +126,7 @@ const homepage = props => {
 							</div>
 						</div>
 
-						<div className="homepage__fiability__item col-md-3 col-sm-6 col-xs-12">
+						<div className="homepage__fiability__item ">
 							<div className="homepage__fiability__item--icon">
 								<i className="far fa-credit-card"></i>
 							</div>
@@ -124,7 +140,7 @@ const homepage = props => {
 							</div>
 						</div>
 
-						<div className="homepage__fiability__item col-md-3 col-sm-6 col-xs-12">
+						<div className="homepage__fiability__item ">
 							<div className="homepage__fiability__item--icon">
 								<i className="fas fa-wallet"></i>
 							</div>
@@ -138,7 +154,7 @@ const homepage = props => {
 							</div>
 						</div>
 
-						<div className="homepage__fiability__item col-md-3 col-sm-6 col-xs-12">
+						<div className="homepage__fiability__item ">
 							<div className="homepage__fiability__item--icon">
 								<i className="fas fa-phone-square"></i>
 							</div>

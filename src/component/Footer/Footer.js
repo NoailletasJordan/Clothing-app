@@ -1,54 +1,38 @@
 import React from "react"
 import "./Footer.scss"
+import { ReactComponent as VisaSVG } from "../../assets/visa.svg"
+import { ReactComponent as PaypalSVG } from "../../assets/paypal.svg"
+import { ReactComponent as MCSVG } from "../../assets/mastercard.svg"
+import { ReactComponent as VeriSVG } from "../../assets/vericoin.svg"
+import { ReactComponent as WavaiSVG } from "../../assets/wavai-dubai.svg"
+import { ReactComponent as CRSVG } from "../../assets/coinranking.svg"
 
-const Footer = (props) => {
-  return (
-    <div className="container-fluid u-col-f3-flex ">
-      <div className="footer row">
-        <div className="col-md-3 col-sm-6 col-6">
-          <div>
-            <div className="str">Account</div>
-            <div>My account</div>
-            <div>Account details</div>
-            <div>Order history</div>
-          </div>
-        </div>
-        <div className="col-md-3 col-sm-6 col-6">
-          <div>
-            <div className="str">About</div>
-            <div>News</div>
-            <div>Checkout</div>
-          </div>
-        </div>
-        <div className="col-md-3 col-sm-6 col-6">
-          <div>
-            <div className="str">Legal</div>
-            <div>Privacy policy</div>
-            <div>Terms & conditions</div>
-            <div>Shipping & return</div>
-          </div>
-        </div>
-        <div className="col-md-3 col-sm-6 col-6">
-          <div>
-            <div className="str">Contact</div>
-            <div>
-              <span className="str">Hotline:</span> 06 98 54 35 62
-            </div>
-            <div>
-              <span className="str">Open - Close:</span> 9h-18h
-            </div>
-            <div>
-              <span className="str">Address:</span> 1 Sesame Street
-            </div>
-          </div>
-        </div>
-
-        {/* <div className="footer__bottom col-xs-12">
-          <div>Copyright © 2020. All rights reserved.</div>
-        </div> */}
-      </div>
-    </div>
-  )
+const Footer = props => {
+	return (
+		<div className="footer">
+			<div className="footer__svg-list">
+				<div className="footer__trustsvg ">
+					<VisaSVG className="" />
+				</div>
+				<div className="footer__trustsvg ">
+					<PaypalSVG className="" />
+				</div>
+				<div className="footer__trustsvg ">
+					<VeriSVG className="" />
+				</div>
+				<div className="footer__trustsvg ">
+					<MCSVG className="" />
+				</div>
+				<div className="footer__trustsvg ">
+					<CRSVG className="" />
+				</div>
+				<div className="footer__trustsvg ">
+					<WavaiSVG className="" />
+				</div>
+			</div>
+			<div className="footer__copyright">Copyright by Elegancy</div>
+		</div>
+	)
 }
 
 export default Footer

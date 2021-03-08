@@ -9,6 +9,8 @@
 }
 
 .homepage {
+	overflow: hidden;
+
 	&__sentence--1 {
 		padding: 75px 0;
 		text-align: center;
@@ -88,6 +90,12 @@
 		align-items: flex-end;
 		font-family: "Playfair Display", serif;
 
+		@media only screen and (max-width: 600px) {
+			background-image: linear-gradient(0deg, #00000088 20%, #ffffff20 100%);
+			justify-content: flex-end;
+			align-items: center;
+		}
+
 		&__image {
 			position: absolute;
 			height: 100%;
@@ -103,6 +111,11 @@
 			flex-direction: column;
 			align-items: flex-end;
 			padding-right: 42px;
+
+			@media only screen and (max-width: 600px) {
+				padding-right: 0;
+				padding-bottom: 55px;
+			}
 		}
 
 		&__text--1 {
@@ -111,6 +124,10 @@
 
 		&__text--2 {
 			font-size: 45px;
+
+			@media only screen and (max-width: 600px) {
+				font-size: 30px;
+			}
 		}
 
 		&__text--3 {
@@ -118,6 +135,14 @@
 			font-size: 18px;
 			font-family: "Poppins", serif;
 			margin-bottom: 15px;
+
+			@media only screen and (max-width: 600px) {
+				font-size: 15px;
+			}
+		}
+
+		&__button-container {
+			position: relative;
 		}
 
 		&__space {
@@ -139,13 +164,24 @@
 		}
 
 		&__fiability {
-			flex-grow: 1;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			width: 100%;
+
+			@media only screen and (max-width: 600px) {
+				padding: 16px 0;
+			}
+
 			.homepage__fiability__item {
+				width: 23%;
+				height: 100%;
 				display: flex;
 				justify-content: center;
-				margin: 10px 0;
-				@media only screen and (min-width: 768px) {
-					margin-top: 0px;
+
+				@media only screen and (max-width: 767px) {
+					width: 48%;
+					margin: 16px 0;
 				}
 				&--icon {
 					display: flex;
@@ -204,7 +240,6 @@
 				padding: 25px;
 				color: white;
 
-				//flex-grow: 1;
 				height: 350px;
 				background-position: center;
 				background-size: cover;

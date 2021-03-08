@@ -1,21 +1,21 @@
 .logo {
-  &__container {
-    position: absolute;
-    height: 80px;
-    width: 10rem;
-    padding: 2.5rem;
-    cursor: pointer;
-    overflow: hidden;
-    //border: 1px solid black;
+	&__container {
+		position: absolute;
+		height: 80px;
+		width: 10rem;
+		padding: 2.5rem;
+		cursor: pointer;
+		overflow: hidden;
+		//border: 1px solid black;
 
-    transform: translate(5px, 10px);
+		transform: translate(5px, 5px);
 
-    @media only screen and (max-width: 600px) {
-      transform: translate(-25px, 10px);
-    }
-  }
+		@media only screen and (max-width: 600px) {
+			transform: translate(-100px, 10px), scale(0.97);
+		}
+	}
 
-  &__img {
-    transform: translate(-48.4%, -49%) scale(0.09);
-  }
+	&__img {
+		transform: translate(-48.4%, -49%) scale(0.09);
+	}
 }

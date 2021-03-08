@@ -1,11 +1,11 @@
 .Sign-in-sign-up-page {
-  min-height: calc(100vh - 320px);
-  display: grid;
-  grid-template-columns: 40% 40%;
-  justify-content: space-evenly;
+	min-height: calc(100vh - 320px);
+	display: grid;
+	grid-template-columns: 40% 40%;
+	justify-content: space-evenly;
 
-  @media only screen and (max-width: 900px) {
-    grid-template-columns: 80%;
-    grid-row-gap: 4rem;
-  }
+	@media only screen and (max-width: 900px) {
+		grid-template-columns: 80%;
+		grid-row-gap: 4rem;
+	}
 }

@@ -11,8 +11,9 @@ export default function ({ props }) {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		autoplay: false,
+		autoplaySpeed: 3000,
 	}
-	console.log(props)
 	return (
 		<Slider {...settings} className="slider">
 			<div className="imported-css">
@@ -33,9 +34,7 @@ export default function ({ props }) {
 				<div className="slider-2">
 					<div className="slider-2__image" />
 					<div className="slider-2__content">
-						<div className="slider-2__title">
-							SPRING <br /> VIBES.
-						</div>
+						<div className="slider-2__title">SPRING VIBES.</div>
 						<div className="slider-2__text">Fresh looks for sunny days</div>
 						<div className=" slider-2__button__container ">
 							<span
